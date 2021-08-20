@@ -29,7 +29,7 @@ jobs:
           images: |
             ghcr.io/jon-hagg/testci
           flavor: |
-            latest=false
+            latest=${{ github.ref == 'refs/heads/main' }}
           tags: |
             type=ref,event=branch
             type=semver,pattern={{raw}}
@@ -39,11 +39,4 @@ jobs:
         with:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-
-      - name: Build and push
-        if: startsWith(github.ref, 'refs/heads/main')
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: ghcr.io/jon-hagg/testci:latest
 
