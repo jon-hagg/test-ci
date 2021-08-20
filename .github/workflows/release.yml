@@ -20,6 +20,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: git log | head -1 > sha.txt
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
