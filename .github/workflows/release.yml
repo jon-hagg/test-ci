@@ -2,9 +2,15 @@ name: Publish docker image
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'main'
+    inputs:
+      imageTags:
+        description: 'Tags to push'
+        required: false
+        default: 'latest'
+
+  # push:
+  #   branches:
+  #     - 'main'
     tags:
       - v*.*.*
 
