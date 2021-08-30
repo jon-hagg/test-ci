@@ -34,15 +34,13 @@ jobs:
         with:
           images: |
             ghcr.io/jon-hagg/testci
-          flavor: |
-            latest=${{ github.ref == 'refs/heads/main' }}
-          tags: |
-            type=ref,event=branch
-            type=semver,pattern={{raw}}
+          # flavor: |
+          #   latest=${{ github.ref == 'refs/heads/main' }}
+          tags: ${{ github.event.inputs.imageTags }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          push: true
+          push: false
           tags: ${{ steps.meta.outputs.tags }}
 
