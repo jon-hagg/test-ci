@@ -15,11 +15,11 @@ on:
       - v*.*.*
 
 jobs:
-  push_to_registry:
-    name: Push Docker image to GitHub Packages
+  test_action:
+    name: Foo
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger docker build
+      - name: Trigger docker build workflow
         uses: jon-hagg/test-ci/workflow-trigger@jon/inputs
         with:
           repo: test-ci
