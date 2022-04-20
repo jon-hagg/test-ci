@@ -25,4 +25,4 @@ jobs:
           repo: test-ci
           workflow_id: 12359014
           token: ${{ secrets.GITHUB_TOKEN }}
-          inputs: '{"imageTags": "${{ inputs.imageTags }}"}'
+          inputs: '{"imageTags": "${{ github.event.inputs.imageTags }}"}'
