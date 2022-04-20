@@ -8,21 +8,15 @@ on:
         required: false
         default: 'latest'
 
-  # push:
-  #   branches:
-  #     - 'main'
-    tags:
-      - v*.*.*
-
 jobs:
-  push_to_registry:
-    name: Push Docker image to GitHub Packages
+  test_action:
+    name: Foo
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger docker build
-        uses: jon-hagg/test-ci/workflow-trigger@jon/inputs
+      - name: Trigger docker build workflow
+        uses: jon-hagg/test-ci/workflow-trigger@main
         with:
           repo: test-ci
           workflow_id: 12359014
           token: ${{ secrets.GITHUB_TOKEN }}
-          inputs: '{"imageTags": "${{ inputs.imageTags }}"}'
+          inputs: '{"imageTags": "${{ github.event.inputs.imageTags }}"}'
