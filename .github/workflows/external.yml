@@ -8,19 +8,13 @@ on:
         required: false
         default: 'latest'
 
-  # push:
-  #   branches:
-  #     - 'main'
-    tags:
-      - v*.*.*
-
 jobs:
   test_action:
     name: Foo
     runs-on: ubuntu-latest
     steps:
       - name: Trigger docker build workflow
-        uses: jon-hagg/test-ci/workflow-trigger@jon/inputs
+        uses: jon-hagg/test-ci/workflow-trigger@main
         with:
           repo: test-ci
           workflow_id: 12359014
