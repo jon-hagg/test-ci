@@ -19,4 +19,4 @@ jobs:
           repo: test-ci
           workflow_id: 12359014
           token: ${{ secrets.CI_TOKEN_CLONE_REPO }}
-          inputs: '{"imageTags": "${{ github.event.inputs.imageTags }}"}'
+          # inputs: '{"imageTags": "${{ github.event.inputs.imageTags }}"}'
