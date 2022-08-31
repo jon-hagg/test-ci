@@ -24,7 +24,7 @@ runs:
   steps:
     - name: Trigger workflow
       env:
-        DISPATCH_API: https://api.github.com/repos/jon-hagg/${{ inputs.repo }}/actions/workflows/${{ inputs.workflow_id }}/dispatches
+        DISPATCH_API: https://api.github.com/repos/jenhagg/${{ inputs.repo }}/actions/workflows/${{ inputs.workflow_id }}/dispatches
       run: |
         curl -XPOST -H "Authorization: token ${{ inputs.token }}" \
         -H "Accept: application/vnd.github.v3+json" \

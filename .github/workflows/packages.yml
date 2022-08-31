@@ -12,7 +12,7 @@ jobs:
 
       - name: Pipenv lock
         id: pipenv_lock
-        uses: Breakthrough-Energy/actions/update-packages@jon/repo-dir
+        uses: Breakthrough-Energy/actions/update-packages@main
 
       - name: Parse JSON
         id: parse_json
