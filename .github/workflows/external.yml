@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger docker build workflow
-        uses: jon-hagg/test-ci/workflow-trigger@main
+        uses: jenhagg/test-ci/workflow-trigger@main
         with:
           repo: test-ci
           workflow_id: 12359014
