@@ -1,0 +1,17 @@
+name: Test duplicates
+
+on: [push, pull_request]
+
+jobs:
+  omg:
+    concurrency: ${{ github.ref }}
+    name: Wow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: YAS
+        run: |
+          echo "we did it"
+          echo ${{ github.ref }}
+          echo ${{ github.sha }}
