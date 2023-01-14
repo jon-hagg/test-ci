@@ -18,3 +18,12 @@ jobs:
           echo ${{ github.ref }}
           echo ${{ github.sha }}
           echo "$GITHUB_CONTEXT"
+
+  another:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
+    name: job2
+    runs-on: ubuntu-latest
+    steps:
+      - name: asdf
+        run: |
+          echo "this is job 2"
